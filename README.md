@@ -1,2 +1,2 @@
 # tweet_app
-twitterのような投稿ができるアプリです
+twitterのような投稿ができるアプリ
