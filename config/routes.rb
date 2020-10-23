@@ -37,4 +37,10 @@ Rails.application.routes.draw do
   # 投稿詳細ページのルーティング
   get "users/:id" => "users#show"
 
+  # ユーザー編集アクションへのルーティング
+  get "/users/:id/edit" => "users#edit"
+
+  # updateアクションへのルーティング
+  post "users/:id/update" => "users#update"
+
 end

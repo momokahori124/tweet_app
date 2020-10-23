@@ -3,6 +3,9 @@
     <div class="user">
       <h2><%= @user.name %></h2>
       <p><%= @user.email %></p>
-    </div>
+
+      <!--- リンク --->
+      <%=link_to("edit", "/users/#{@user.id}/edit")%>
+    </di1v>
   </div>
 </div>
