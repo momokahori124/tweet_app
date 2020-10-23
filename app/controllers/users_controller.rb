@@ -16,7 +16,18 @@ class UsersController < ApplicationController
 
   # フォームからparamsで情報を受け取って保存するアクション
   def create
-    @user = User.new(name: params[:name], email: params[:email])
+    @user = User.new(
+      name: params[:name], 
+      email: params[:email],
+      image_name: "me.png"
+    )
+
+    # デフォルト画像は決まっているが、最初から設定された場合、その画像にする
+    if image = params[:image]
+      @user.image_name = "#{@user.id}.jpg"
+      File.binwrite("public/user_images/#{@user.image_name}", image.read)
+    end
+  
     if @user.save
       flash[:notice] = "Save!!"
       redirect_to("/users/#{@user.id}")
@@ -34,6 +45,12 @@ class UsersController < ApplicationController
     @user = User.find_by(id: params[:id])
     @user.name = params[:name]
     @user.email = params[:email]
+
+    if image = params[:image]
+      @user.image_name = "#{@user.id}.jpg"
+      File.binwrite("public/user_images/#{@user.image_name}", image.read)
+    end
+
     if @user.save
         flash[:notice] = "Update!"
         redirect_to("/users/#{@user.id}")
