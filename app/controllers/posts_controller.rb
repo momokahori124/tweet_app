@@ -2,13 +2,6 @@ class PostsController < ApplicationController
   def index
     # all.orderで作られた順に並ぶようにしている
     @posts = Post.all.order(created_at: :desc)
-    # @posts = [
-    #   "apple",
-    #   "banana",
-    #   "chocolate",
-    #   "desk",
-    #   "english"
-    # ]
   end
 
   # show アクションを追加
