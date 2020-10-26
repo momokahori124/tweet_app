@@ -21,26 +21,26 @@
           <%=link_to(@current_user.name, "/users/#{@current_user.id}") %>
         </li>
         <li>
-          <%=link_to("投稿一覧","/posts/index") %>
+          <%=link_to("Posts","/posts/index") %>
         </li>
         <li>
-          <%=link_to("新規投稿", "/posts/new")%>
+          <%=link_to("New Post", "/posts/new")%>
         </li>
         <li>
-          <%=link_to("ユーザー一覧", "/users/index")%>
+          <%=link_to("User List", "/users/index")%>
         </li>
         <li>
-          <%=link_to("ログアウト", "/logout")%>
+          <%=link_to("Logout", "/logout")%>
         </li>
       <% else %>
         <li>
-          <%=link_to("TweetAppとは","/about") %>
+          <%=link_to("About TweetApp","/about") %>
         </li>
         <li>
-        <%=link_to("新規ユーザー登録", "/signup")%>
+        <%=link_to("Registration", "/signup")%>
         </li>
         <li>
-        <%=link_to("ログイン", "/login")%>
+        <%=link_to("Login", "/login")%>
         </li>
       <% end %>
     </ul>

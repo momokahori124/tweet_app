@@ -4,10 +4,13 @@
       <h2><%= @user.name %></h2>
       <p><%= @user.email %></p>
 
-        <!--- リンク --->
         <% if @current_user.id == @user.id %>
             <%=link_to("edit", "/users/#{@user.id}/edit")%>
         <% end %>
+
+        <!---  for debug --->
+        <!--- <%= link_to("Delete", "/users/#{@user.id}/destroy", {method: "post"}) %> --->
+
     </div>
   </div>
 </div>

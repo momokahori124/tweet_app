@@ -66,6 +66,13 @@ class UsersController < ApplicationController
     end
   end
 
+  # def destroy
+  #   @user = User.find_by(id: params[:id])
+  #   @user.destroy
+  #   flash[:notice] = "Delete the User."
+  #   redirect_to("/users/index")
+  # end
+
   # login機能
 
   def login_from
