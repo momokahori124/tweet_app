@@ -43,4 +43,13 @@ Rails.application.routes.draw do
   # updateアクションへのルーティング
   post "users/:id/update" => "users#update"
 
+  # <----- login ----->
+
+  # ログイン機能
+  get "login" => "users#login_form"
+  post "login" => "users#login"
+
+  # ログアウト機能
+  get "logout" => "users#logout"
+
 end

@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+ 
   def index
     @users = User.all.order(created_at: :desc)
   end
@@ -19,16 +20,18 @@ class UsersController < ApplicationController
     @user = User.new(
       name: params[:name], 
       email: params[:email],
-      image_name: "me.png"
+      image_name: "me.png",
+      password: params[:password]
     )
 
-    # デフォルト画像は決まっているが、最初から設定された場合、その画像にする
+    # ここでイメージが送られてこなければデフォルト画像が設定される
     if image = params[:image]
       @user.image_name = "#{@user.id}.jpg"
       File.binwrite("public/user_images/#{@user.image_name}", image.read)
     end
   
     if @user.save
+      session[:user_id] = @user.id
       flash[:notice] = "Save!!"
       redirect_to("/users/#{@user.id}")
     else
@@ -58,5 +61,34 @@ class UsersController < ApplicationController
       render("users/edit")
     end
   end
+
+  # login機能
+
+  def login_from
+  end
+
+  def login
+    @user = User.find_by(email: params[:email], password: params[:password])
+    if @user
+      session[:user_id] = @user.id
+      flash[:notice] = "Login Success"
+      redirect_to("/posts/index")
+    else
+      flash[:notice] = "Can't find User"
+      @email = params[:email]
+      @password = params[:password]
+      render("users/login_form")
+    end
+
+  end
+
+  # logout機能
+
+  def logout
+    session[:user_id] = nil
+    flash[:notice] = "ログアウトしました"
+    redirect_to("/login")
+  end
+
 
 end
