@@ -4,8 +4,10 @@
       <h2><%= @user.name %></h2>
       <p><%= @user.email %></p>
 
-      <!--- リンク --->
-      <%=link_to("edit", "/users/#{@user.id}/edit")%>
-    </di1v>
+        <!--- リンク --->
+        <% if @current_user.id == @user.id %>
+            <%=link_to("edit", "/users/#{@user.id}/edit")%>
+        <% end %>
+    </div>
   </div>
 </div>

@@ -50,6 +50,7 @@ Rails.application.routes.draw do
   post "login" => "users#login"
 
   # ログアウト機能
+  post "logout" => "users#logout"
   get "logout" => "users#logout"
 
 end

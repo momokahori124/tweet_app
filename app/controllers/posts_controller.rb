@@ -1,5 +1,7 @@
 class PostsController < ApplicationController
 
+  before_action :authenticate_user 
+
   def index
     # all.orderで作られた順に並ぶようにしている
     @posts = Post.all.order(created_at: :desc)
@@ -18,7 +20,7 @@ class PostsController < ApplicationController
 
   # createアクションを追加
   def create
-    @post = Post.new(content: params[:content])
+    @post = Post.new(content: usparams[:content])
     if @post.save
       flash[:notice] = "Saved the post."
       redirect_to("/posts/index")
