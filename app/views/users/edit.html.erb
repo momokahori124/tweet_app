@@ -1,6 +1,6 @@
 <div class="main users-edit">
   <div class="container">
-    <div class="form-heading">ユーザー情報の編集</div>
+    <div class="form-heading">Do you want to edit your user information?</div>
     <div class="form users-form">
       <div class="form-body">
 
@@ -11,13 +11,13 @@
       <% end %>
 
         <%=form_tag("/users/#{@user.id}/update", {multipart: true}) do%>
-            <p>ユーザー名</p>
+            <p>User Name</p>
             <input name = "name" value="<%=@user.name%>">
-            <p>画像</p>
+            <p>User Image</p>
             <input name="image" type="file">
-            <p>メールアドレス</p>
+            <p>Email Address</p>
             <input name = "email" value="<%=@user.email%>">
-            <input type="submit" value="保存">
+            <input type="submit" value="Save">
         <% end %>
 
       </div>
