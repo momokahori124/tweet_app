@@ -44,7 +44,7 @@ Rails.application.routes.draw do
   post "users/:id/update" => "users#update"
 
   # destroyアクションへのルーティング 
-  # post "users/:id/destroy" => "users#destroy"
+  post "users/:id/destroy" => "users#destroy"
 
   # <----- login ----->
 
