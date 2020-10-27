@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
 
-  before_action :authenticate_user 
+  before_action :authenticate_user
+  before_action :ensure_correct_user, {only: [:edit,:update,:delete]}
 
   def index
     # all.orderで作られた順に並ぶようにしている
@@ -20,7 +21,10 @@ class PostsController < ApplicationController
 
   # createアクションを追加
   def create
-    @post = Post.new(content: usparams[:content])
+    @post = Post.new(
+      content: params[:content],
+      user_id: @current_user.id 
+    )
     if @post.save
       flash[:notice] = "Saved the post."
       redirect_to("/posts/index")
@@ -52,6 +56,15 @@ class PostsController < ApplicationController
     @post.destroy
     flash[:notice] = "Delete the post."
     redirect_to("/posts/index")
+  end
+
+  # ensure_correct_user 2つめの定義
+  def ensure_correct_user
+    @post = Post.find_by(id: params[:id])
+    if @post.user_id != @current_user.id
+      flash[:notice] = "You don't have the authority."
+      redirect_to("/posts/index")
+    end
   end
 
 end

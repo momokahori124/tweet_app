@@ -1,6 +1,14 @@
 <div class="main posts-show">
   <div class="container">
     <div class="posts-show-item">
+
+      <div class="post-user-name">
+        <% if @post.user %>
+          <img src="<%= "/user_images/#{@post.user.image_name}" %>" >
+          <%=link_to(@post.user.name, "/users/#{@post.user.id}")%>
+        <% end %>
+      </div>
+
       <p>
         <%= @post.content %>
       </p>
@@ -8,9 +16,12 @@
         <%= @post.created_at %>
       </div>
       <div class="post-menus">
-        <%= link_to("Edit", "/posts/#{@post.id}/edit") %>
-        <%= link_to("Delete", "/posts/#{@post.id}/destroy", {method: "post"}) %>
+        <% if @post.user.id == @current_user.id%>
+          <%= link_to("Edit", "/posts/#{@post.id}/edit") %>
+          <%= link_to("Delete", "/posts/#{@post.id}/destroy", {method: "post"}) %>
+        <% end %>
       </div>
+
     </div>
   </div>
 </div>
