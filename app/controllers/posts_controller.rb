@@ -12,6 +12,7 @@ class PostsController < ApplicationController
   def show
     # @id = params[:id]
     @post = Post.find_by(id: params[:id])
+    @user = User.find_by(id: @post.user_id)
   end
 
   # newアクションを追加
