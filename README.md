@@ -11,6 +11,10 @@
 
 ユーザー登録をして、ログインしてください。
 
+## 👀 Overview
+
+![tweetapp](https://user-images.githubusercontent.com/60100351/97552290-6b32e680-1a17-11eb-98e2-5677aad26394.gif)
+
 ## 📦 feature
 
 - 基本的な投稿とユーザーののCRUD機能(create, read, update, delete)
