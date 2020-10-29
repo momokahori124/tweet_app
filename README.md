@@ -13,7 +13,7 @@
 
 ## 👀 Overview
 
-![tweetapp](https://user-images.githubusercontent.com/60100351/97552290-6b32e680-1a17-11eb-98e2-5677aad26394.gif)
+![tweetapp](https://user-images.githubusercontent.com/60100351/97552702-edbba600-1a17-11eb-8831-115e29f58042.gif)
 
 ## 📦 feature
 
