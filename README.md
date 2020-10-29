@@ -1,4 +1,4 @@
-# tweet_app
+<h1 align="center">Tweet app</h1>
 twitterのような投稿ができるアプリを、ruby on railsで作成しました。
 
 ## How to run
