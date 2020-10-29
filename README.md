@@ -1,15 +1,17 @@
 <h1 align="center">Tweet app</h1>
-twitterのような投稿ができるアプリを、ruby on railsで作成しました。
+<p align="center">twitterのような投稿ができるアプリを、ruby on railsで作成しました。</p>
 
-## How to run
+<img align="center"  width="1428" alt="スクリーンショット 2020-10-29 18 31 55" src="https://user-images.githubusercontent.com/60100351/97550471-0e363100-1a15-11eb-979c-767c2f15f983.png">
+
+## 🏃‍♀️How to run
 
 ここにdockerをかく
 
-## Usage
+## 💬 Usage
 
 ユーザー登録をして、ログインしてください。
 
-## feature
+## 📦 feature
 
 - 基本的な投稿とユーザーののCRUD機能(create, read, update, delete)
 - 不正な投稿データの排除
@@ -19,7 +21,7 @@ twitterのような投稿ができるアプリを、ruby on railsで作成しま
 - いいね機能、いいねリスト
 
 
-## 投稿画面
+## 📱投稿画面
 
 投稿やユーザーの情報はログインしていないと見ることができません。
 
@@ -32,7 +34,7 @@ twitterのような投稿ができるアプリを、ruby on railsで作成しま
 
 <img width="701" alt="スクリーンショット 2020-10-29 18 03 58" src="https://user-images.githubusercontent.com/60100351/97547415-22782f00-1a11-11eb-86d5-31c040db1ee7.png">
 
-## ユーザーのプロフィール画面
+## 👩ユーザーのプロフィール画面
 
 ### 投稿内容
 
